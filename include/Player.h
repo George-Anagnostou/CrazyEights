@@ -14,6 +14,7 @@ public:
     std::vector<Card> getHand();
     int getID() const;
     void addCard(const Card& card);
+    void showCards() const;
 };
 
 #endif // PLAYER_H

@@ -17,3 +17,10 @@ int Player::getID() const {
 void Player::addCard(const Card& card) {
     hand.push_back(card);
 }
+
+void Player::showCards() const {
+    for (const Card& card : hand) {
+        std::cout << card << " ";
+    }
+    std::cout << std::endl;
+}
