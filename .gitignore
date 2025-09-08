@@ -36,6 +36,7 @@
 *.exe
 *.out
 *.app
+crazyeights
 
 # debug information files
 *.dwo
