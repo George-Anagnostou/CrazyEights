@@ -11,7 +11,9 @@ Deck::Deck() {
 }
 
 Card Deck::dealCard() {
-    assert(m_nextCardIndex != 52 && "Deck::dealCard ran out of cards");
+    if (this->isEmpty()) {
+        throw std::out_of_range("No more cards to deal");
+    }
 
     return m_cards[m_nextCardIndex++];
 }
@@ -19,4 +21,8 @@ Card Deck::dealCard() {
 void Deck::shuffle() {
     std::shuffle(m_cards.begin(), m_cards.end(), Random::mt);
     m_nextCardIndex = 0;
+}
+
+bool Deck::isEmpty() const {
+    return m_nextCardIndex >= m_cards.size();
 }

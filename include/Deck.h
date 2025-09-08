@@ -17,6 +17,7 @@ public:
 
 	Card dealCard();
 	void shuffle();
+	bool isEmpty() const;
 };
 
 #endif // DECK_H
