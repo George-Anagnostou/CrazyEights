@@ -6,6 +6,7 @@
 
 namespace Settings {
     constexpr int MinNumPlayers { 2 };
+    constexpr int MaxNumPlayers { 10 };
     int CardsPerPlayer { 5 }; // should be 7 in 2 player game
 };
 
@@ -75,6 +76,10 @@ int main() {
     int numPlayers { getNumPlayers() };
     if (numPlayers == 2) {
         Settings::CardsPerPlayer = 7;
+    }
+    while (numPlayers > Settings::MaxNumPlayers) {
+        std::cout << "Too many players for one deck. At most 10 players can play at once.\n";
+        numPlayers = getNumPlayers();
     }
     
     Game game { numPlayers };
